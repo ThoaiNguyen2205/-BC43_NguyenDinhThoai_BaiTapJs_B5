@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bài tập JS buổi 5</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- FONTAWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+
+  <body>
+    <div class="title">
+      <h1 class="ms-4 pt-3">Bài Tập Js buổi 5</h1>
+      <ul>
+        <li>
+          <a href="#BT1">Bài 1</a>
+        </li>
+        <li>
+          <a href="#BT2">Bài 2</a>
+        </li>
+        <li>
+          <a href="#BT3">Bài 3</a>
+        </li>
+        <li>
+          <a href="#BT4">Bài 4</a>
+        </li>
+      </ul>
+    </div>
+    <div class="container w-50 content">
+      <div class="items mt-4" id="BT1">
+        <h3 class="text-center my-5">Bài tập 1: Quản lý tuyển sinh</h3>
+        <div class="row">
+          <div class="col-4 form-group">
+            <h6>Điểm Chuẩn</h6>
+            <input
+              type="number"
+              id="diemChuan"
+              placeholder="Nhập điểm chuẩn"
+              class="form-control"
+            />
+          </div>
+          <div class="col-4 form-group">
+            <h6>Khu Vực Ưu Tiên</h6>
+            <select name="" id="khuVuc" class="form-control">
+              <option value="">Chọn Khu Vực</option>
+              <option value="2">A</option>
+              <option value="1">B</option>
+              <option value="0.5">C</option>
+            </select>
+          </div>
+          <div class="col-4 form-group">
+            <h6>Đối Tượng Ưu Tiên</h6>
+            <select name="" id="doiTuong" class="form-control">
+              <option value="">Chọn Đối tượng</option>
+              <option value="2.5">1</option>
+              <option value="1.5">2</option>
+              <option value="1">3</option>
+              Khu Vực
+            </select>
+          </div>
+          <div class="col-4 form-group">
+            <h6>Điểm Môn Thứ 1</h6>
+            <input
+              type="number"
+              class="form-control"
+              id="diemMon1"
+              placeholder="Nhập điểm"
+            />
+          </div>
+          <div class="col-4">
+            <h6>Điểm Môn Thứ 2</h6>
+            <input
+              type="number"
+              class="form-control"
+              id="diemMon2"
+              placeholder="Nhập điểm"
+            />
+          </div>
+          <div class="col-4">
+            <h6>Điểm Môn Thứ 3</h6>
+            <input
+              type="number"
+              class="form-control"
+              id="diemMon3"
+              placeholder="Nhập điểm"
+            />
+          </div>
+        </div>
+        <button
+          class="btn btn-primary"
+          id="btnTinhdiemThi"
+          onclick="tinhDiemThi()"
+        >
+          Kết quả
+        </button>
+        <br />
+        <div class="alert alert-success">
+          <p>
+            Tổng điểm:
+            <span id="tongSoDiem" class="text-danger fw-bold ms-2"></span>
+          </p>
+          <p>
+            Kết quả: <span id="ketQua" class="text-danger fw-bold ms-2"></span>
+          </p>
+        </div>
+      </div>
+      <div class="items" id="BT2">
+        <h3 class="text-center my-5">Bài tập 2: Tính tiền điện</h3>
+        <div class="row">
+          <div class="col-6 form-group">
+            <h6>Khách Hàng</h6>
+            <input
+              type="text"
+              class="form-control"
+              id="hoTen"
+              placeholder="Nhập họ tên"
+            />
+          </div>
+          <div class="col-6 form-group">
+            <h6>Số KW Điện đã dùng</h6>
+            <input
+              type="number"
+              class="form-control"
+              id="soKwDien"
+              placeholder="Nhập số Kw điện"
+            />
+          </div>
+        </div>
+        <button
+          class="btn btn-primary"
+          id="btnTinhTienDien"
+          onclick="tinhTienDien()"
+        >
+          Tính tiền
+        </button>
+        <div class="alert alert-success">
+          <p>
+            Khách hàng:
+            <span id="hoVaTen" class="text-danger fw-bold ms-2"></span>
+          </p>
+          <p>
+            Tiền điện:
+            <span id="tongTienDien" class="text-danger fw-bold ms-2"></span>
+          </p>
+        </div>
+      </div>
+      <div class="items" id="BT3">
+        <h3 class="text-center my-5">Bài tập 3: Tính Thuế thu nhập cá nhân</h3>
+        <div class="row">
+          <div class="col-4 form-group">
+            <h6>Họ Tên Cá Nhân</h6>
+            <input
+              type="text"
+              id="hoTenThue"
+              class="form-control"
+              placeholder="Nhập họ tên"
+            />
+          </div>
+          <div class="col-4 form-group">
+            <h6>Tổng Thu Nhập Năm</h6>
+            <input
+              type="number"
+              id="tongThuNhap"
+              class="form-control"
+              placeholder="VNĐ"
+            />
+          </div>
+          <div class="col-4">
+            <h6>Số Người Phụ Thuộc</h6>
+            <input
+              type="number"
+              id="soNguoiPhuThuoc"
+              class="form-control"
+              placeholder="Nhập số người"
+            />
+          </div>
+        </div>
+        <button
+          id="btnTinhThue"
+          class="btn btn-primary"
+          onclick="tinhThueThuNhap()"
+        >
+          Tính thuế
+        </button>
+        <div class="alert alert-success">
+          <p>
+            Họ và tên :
+            <span id="hoVaTenThue" class="text-danger fw-bold ms-2"></span>
+          </p>
+          <p>
+            Số thuế phải nộp:
+            <span id="tongThue" class="text-danger fw-bold ms-2"></span>
+          </p>
+        </div>
+      </div>
+      <div class="items mb-5" id="BT4">
+        <h3 class="text-center my-5">Bài tập 4: Tính tiền Cáp</h3>
+        <div class="row">
+          <div class="col-4 form-group">
+            <p>Đối tượng</p>
+            <select
+              name=""
+              id="chonDoiTuong"
+              class="form-control"
+              onchange="myEvent()"
+            >
+              <option value="">Chọn đối tượng</option>
+              <option value="1">Nhà Dân</option>
+              <option value="2">Doanh nghiệp</option>
+            </select>
+          </div>
+          <div class="col-4 form-group">
+            <p>Mã khách hàng</p>
+            <input
+              type="text"
+              class="form-control"
+              id="maKhachHang"
+              placeholder="Nhập mã"
+            />
+          </div>
+          <div class="col-4 form-group">
+            <p>Số kênh Cao cấp</p>
+            <input
+              type="number"
+              id="soKenhCaoCap"
+              placeholder="Nhập số kênh"
+              class="form-control"
+            />
+          </div>
+          <div class="col-4 form-group" id="input-doanh-nghiep"></div>
+        </div>
+        <button class="btn btn-primary" id="btnTinhTienCap">Tính tiền</button>
+        <div class="alert alert-success">
+          <p>
+            Mã khách Hàng :
+            <span id="hoTenKhachHang" class="text-danger fw-bold ms-2"></span>
+          </p>
+          <p>
+            Số tiền cáp :
+            <span id="tongTienCap" class="text-danger fw-bold ms-2"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <a id="button" class="text-decoration-none"></a>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- JS -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>
