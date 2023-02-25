@@ -68,22 +68,22 @@ function tinhThueThuNhap(){
         tongThue= thuNhapChiuThue*5/100
     }
     else if(thuNhapChiuThue>60000000 && thuNhapChiuThue <=120000000){
-        tongThue= thuNhapChiuThue*10/100 
+        tongThue=(60000000*5/100)+ (thuNhapChiuThue-60000000)*10/100 
     }
     else if(thuNhapChiuThue>120000000 && thuNhapChiuThue <=210000000){
-        tongThue= thuNhapChiuThue*15/100 
+        tongThue= (60000000*5/100)+(60000000*10/100)+ (thuNhapChiuThue-120000000)*15/100
     }
     else if(thuNhapChiuThue>210000000 && thuNhapChiuThue <=384000000){
-        tongThue= thuNhapChiuThue*20/100 
+        tongThue= (60000000*5/100)+(60000000*10/100)+(90000000*15/100)+(thuNhapChiuThue-210000000)*20/100 
     }
     else if(thuNhapChiuThue>384000000 && thuNhapChiuThue <=624000000){
-        tongThue= thuNhapChiuThue*25/100 
+        tongThue= (60000000*5/100)+(60000000*10/100)+(90000000*15/100)+(174000000*20/100)+(thuNhapChiuThue-384000000)*25/100 
     }
     else if(thuNhapChiuThue>624000000 && thuNhapChiuThue <=960000000){
-        tongThue= thuNhapChiuThue*30/100 
+        tongThue= (60000000*5/100)+(60000000*10/100)+(90000000*15/100)+(174000000*20/100)+(240000000*25/100)+ (thuNhapChiuThue-624000000)*30/100;
     }
     else{
-        tongThue= thuNhapChiuThue*35/100  
+        tongThue= (60000000*5/100)+(60000000*10/100)+(90000000*15/100)+(174000000*20/100)+(240000000*25/100)+(336000000*30/100)+(thuNhapChiuThue-960000000)*35/100 
     }
    
     document.getElementById('hoVaTenThue').innerHTML=hoTenThue;
